@@ -1,23 +1,28 @@
 import { React, useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css'
+import Header from './components/Header';
+import Home from './pages/Home';
+import ProjectGallery from './pages/ProjectGallery';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
 
 
 
-const App = () => {
+function App() {
   return (
-    <main>
-     <Router>
+    <Router>
+      <div>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/ProjectGallery" element={<ProjectGallery />} />
-          <Route path="/Project" element={<Project />} />
-          <Route path="/Contact" element={<Contact />} />
+          <Route path="/projectGallery" element={<ProjectGallery />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
-      
+        </div>
     </Router>
-    </main>
+    
   );
 }
 
